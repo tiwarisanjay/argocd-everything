@@ -4,7 +4,9 @@
 - Clone the repo first
     ```
     git clone https://github.com/tiwarisanjay/argocd-istio-gke.git
+    cd argocd-istio-gke
     ```
+
 - This is for your production setup. So get the Istio/ASM(Anthos Service Mesh) running in your GKE. 
 - Create a argocd namespace as following for ASM as following 
     ```bash
@@ -32,7 +34,6 @@
 
 - Now Install argocd with following command and it will start your argocd. 
     ```bash
-    cd argocd-istio-gke
     kubectl apply -k . 
     ```
 - As we have not setup login with sso it will be admin password. Use user as `admin`
