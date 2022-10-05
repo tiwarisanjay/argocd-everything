@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ./base
+  - overlays/gateway-vs.yaml
+patchesStrategicMerge:
+  - overlays/argocd-cmd-params-cm.yaml
+  - overlays/argocd-redis-deployment.yaml
+  - overlays/repo-server-deployment.yaml
+  - overlays/argocd-server-service.yaml
+namespace: argocd
