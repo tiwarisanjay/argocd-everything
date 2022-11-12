@@ -3,7 +3,7 @@ Follow Document [Run Vault on Kubernetes](https://developer.hashicorp.com/vault/
 ```bash
 helm repo add hashicorp https://helm.releases.hashicorp.com
 helm search repo hashicorp/vault
-helm install vault hashicorp/vault
+helm install vault hashicorp/vault -n vault --create-namespace
 ```
 - View vault UI 
 ```bash 
@@ -17,7 +17,7 @@ vault-0                                 0/1     Running   0          1m49s
 ```
 - Initialize one Vault server with the default number of key shares and default key threshold:
 ```
-$kubectl exec -ti vault-0 -- vault operator init
+$kubectl exec -ti vault-0 -n vault -- vault operator init
 Unseal Key 1: MBFSDepD9E6whREc6Dj+k3pMaKJ6cCnCUWcySJQymObb
 Unseal Key 2: zQj4v22k9ixegS+94HJwmIaWLBL3nZHe1i+b/wHz25fr
 Unseal Key 3: 7dbPPeeGGW3SmeBFFo04peCKkXFuuyKc8b2DuntA4VU5
