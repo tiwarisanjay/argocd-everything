@@ -29,9 +29,9 @@ Initial Root Token: s.zJNwZlRrqISjyBHFMiEca6GF
 - The output displays the key shares and initial root key generated. Unseal the Vault server with the key shares until the key threshold is met:
 ```
 ## Unseal the first vault server until it reaches the key threshold
-$ kubectl exec -ti vault-0 -- vault operator unseal # ... Unseal Key 1
-$ kubectl exec -ti vault-0 -- vault operator unseal # ... Unseal Key 2
-$ kubectl exec -ti vault-0 -- vault operator unseal # ... Unseal Key 3
+$ kubectl exec -ti vault-0 -n vault -- vault operator unseal # ... Unseal Key 1
+$ kubectl exec -ti vault-0 -n vault -- vault operator unseal # ... Unseal Key 2
+$ kubectl exec -ti vault-0 -n vault -- vault operator unseal # ... Unseal Key 3
 ```
 - Command Line login. Use document [Login](https://developer.hashicorp.com/vault/docs/commands/login) for more info
 ```
