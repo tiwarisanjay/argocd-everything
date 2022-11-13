@@ -7,7 +7,7 @@ helm install vault hashicorp/vault -n vault --create-namespace
 ```
 - View vault UI 
 ```bash 
-kubectl port-forward vault-0 8200:8200
+kubectl port-forward vault-0 8200:8200 -n vault
 ```
 - Initialize and unseal Vault
 ```
