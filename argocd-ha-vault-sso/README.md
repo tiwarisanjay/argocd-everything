@@ -81,7 +81,7 @@ policies             ["root"]
 - Create a vault policy 
     ```
     $vault policy write read-policy -<<EOF
-    # Read-only permission on secrets stored at 'secret/data/mysql/webapp'
+    # Read-only permission on secrets stored at 'argocd/data'
     path "argocd/*" {
     capabilities = [ "read", "list" ]
     }
