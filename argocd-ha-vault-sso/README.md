@@ -105,7 +105,7 @@ policies             ["root"]
     ```
 - Get Secert ID 
     ```
-     $vault write -force auth/approle/role/jenkins/secret-id
+     $vault write -force auth/approle/role/argocd/secret-id
 
     Key                 Value
     ---                 -----
