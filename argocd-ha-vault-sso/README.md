@@ -58,9 +58,13 @@ policies             ["root"]
 - We will use this setup for vault connection for secret.
 ## APP ROLE 
 - Login with your root token
+- export vault address
+    ```
+    export VAULT_ADDR=http://127.0.0.1:8200
+    ```
 - Enable new kv engine
     ```
-       vault secrets enable -version=2 -path=argocd kv
+    vault secrets enable -version=2 -path=argocd kv
     ```
 - To list all your current secerets 
     ```
