@@ -1,0 +1,11 @@
+apiVersion: v1
+stringData:
+  VAULT_ADDR: vault.vault.cluster.svc.local
+  AVP_AUTH_TYPE: approle
+  AVP_ROLE_ID: a965fffa-6fb2-5b00-f98f-3e78e43ed02a
+  AVP_SECRET_ID: f29d99eb-4a95-65b2-e3e5-04d4080366e7
+  AVP_TYPE: vault
+kind: Secret
+metadata:
+  name: vault-configuration
+type: Opaque
