@@ -3,12 +3,16 @@ kind: Application
 metadata:
   name: demo-app
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     repoURL: https://github.com/tiwarisanjay/argocd-everything.git
     targetRevision: HEAD
     path: demo-app-src
+    plugin:
+      name: argocd-vault-plugin
   destination:
     server: https://kubernetes.default.svc
     namespace: demo
