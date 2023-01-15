@@ -15,7 +15,7 @@ spec:
       name: argocd-vault-plugin
   destination:
     server: https://kubernetes.default.svc
-    namespace: demo
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true 
