@@ -5,15 +5,15 @@ metadata:
 data:
   service.slack: |
     token: $slack-token 
-  defaultTriggers: |
+  defaultTriggers: |   # https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/triggers/#default-triggers 
     - on-deployed
-  trigger.on-deployed: |
+  trigger.on-deployed: |  # https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/triggers/ 
     - description: Application is synced and healthy. Triggered once per commit.
       oncePer: app.status.sync.revision
       send:
       - app-deployed
       when: app.status.sync.status in ['Synced'] and app.status.health.status == 'Healthy'
-  template.app-deployed: |
+  template.app-deployed: | # https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/templates/
     message: |
       {{if eq .serviceType "slack"}}:white_check_mark:{{end}} Application {{.app.metadata.name}} is now running new version of deployments manifests.
     slack:
