@@ -49,3 +49,8 @@
 
 ## For ArgoCD OIDC integration 
 - Follow Instruction given at https://github.com/tiwarisanjay/argocd-dex for ArgoCD dex integration for any OIDC provider. 
+
+## Increase performace for ArgoCD 
+- if your Argo CD instance manages too many applications. For 1000 application we use 50 for --status-processors and 25 for --operation-processors 
+- The manifest generation typically takes the most time during reconciliation. increase the value of --repo-server-timeout-seconds and consider scaling up the argocd-repo-server deployment.
+- 
