@@ -33,6 +33,10 @@ $ kubectl exec -ti vault-0 -n vault -- vault operator unseal # ... Unseal Key 1
 $ kubectl exec -ti vault-0 -n vault -- vault operator unseal # ... Unseal Key 2
 $ kubectl exec -ti vault-0 -n vault -- vault operator unseal # ... Unseal Key 3
 ```
+- Export the vault address to location host as by default its uses the securt address
+```
+export VAULT_ADDR='http://127.0.0.1:8200'
+```
 - Command Line login. Use document [Login](https://developer.hashicorp.com/vault/docs/commands/login) for more info
 ```
 $ vault login 
