@@ -128,6 +128,6 @@ policies             ["root"]
     ```
 - Read Secert 
     ```
-    vault kv get test3/mysecret
+    vault kv get argocd/mysecret
     ```
 # Install ArgoCD
